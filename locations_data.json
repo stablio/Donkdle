@@ -28,8 +28,8 @@
     "level": "DK Isles",
     "kong": "Tiny",
     "type": "Banana",
-    "requirement_count": 0,
-    "moves": []
+    "requirement_count": 2,
+    "moves": ["monkeyport", "saxophone"]
   },
   {
     "id": "IslesLankyCagedBanana",
@@ -62,12 +62,10 @@
     "level": "DK Isles",
     "kong": "Chunky",
     "type": "Banana",
-    "requirement_count": 4,
+    "requirement_count": 2,
     "moves": [
       "barrels",
-      "climbing",
-      "triangle",
-      "vines"
+      "triangle"
     ]
   },
   {
@@ -77,10 +75,12 @@
     "level": "DK Isles",
     "kong": "Chunky",
     "type": "Banana",
-    "requirement_count": 2,
+    "requirement_count": 4,
     "moves": [
       "hunky",
-      "slam"
+      "slam",
+      "monkeyport",
+      "saxophone"
     ]
   },
   {
@@ -102,9 +102,10 @@
     "level": "DK Isles",
     "kong": "Any",
     "type": "Fairy",
-    "requirement_count": 1,
+    "requirement_count": 2,
     "moves": [
-      "camera"
+      "camera",
+      "monkeyport"
     ]
   },
   {
@@ -163,12 +164,10 @@
     "level": "DK Isles",
     "kong": "Tiny",
     "type": "Banana",
-    "requirement_count": 4,
+    "requirement_count": 2,
     "moves": [
       "charge",
-      "climbing",
-      "twirl",
-      "vines"
+      "twirl"
     ]
   },
   {
@@ -267,10 +266,8 @@
     "level": "DK Isles",
     "kong": "Chunky",
     "type": "Blueprint",
-    "requirement_count": 1,
-    "moves": [
-      "diving"
-    ]
+    "requirement_count": 0,
+    "moves": []
   },
   {
     "id": "IslesDiddyCagedBanana",
@@ -279,10 +276,9 @@
     "level": "DK Isles",
     "kong": "Diddy",
     "type": "Banana",
-    "requirement_count": 2,
+    "requirement_count": 1,
     "moves": [
-      "peanut",
-      "twirl"
+      "peanut"
     ]
   },
   {
@@ -292,9 +288,11 @@
     "level": "DK Isles",
     "kong": "Diddy",
     "type": "Banana",
-    "requirement_count": 1,
+    "requirement_count": 3,
     "moves": [
-      "rocketbarrel"
+      "rocketbarrel",
+      "barrels",
+      "trombone"
     ]
   },
   {
@@ -304,9 +302,14 @@
     "level": "DK Isles",
     "kong": "Any",
     "type": "Crown",
-    "requirement_count": 1,
+    "requirement_count": 6,
     "moves": [
-      "gone"
+      "gone",
+      "coconut",
+      "peanut",
+      "grape",
+      "feather",
+      "pineapple"
     ]
   },
   {
@@ -316,9 +319,10 @@
     "level": "DK Isles",
     "kong": "Any",
     "type": "Fairy",
-    "requirement_count": 1,
+    "requirement_count": 2,
     "moves": [
-      "camera"
+      "camera",
+      "feather"
     ]
   },
   {
@@ -328,9 +332,8 @@
     "level": "DK Isles",
     "kong": "Donkey",
     "type": "Banana",
-    "requirement_count": 3,
+    "requirement_count": 2,
     "moves": [
-      "climbing",
       "punch",
       "strong"
     ]
@@ -344,7 +347,6 @@
     "type": "Banana",
     "requirement_count": 3,
     "moves": [
-      "climbing",
       "guitar",
       "rocketbarrel"
     ]
@@ -356,9 +358,8 @@
     "level": "DK Isles",
     "kong": "Lanky",
     "type": "Blueprint",
-    "requirement_count": 2,
+    "requirement_count": 1,
     "moves": [
-      "climbing",
       "punch"
     ]
   },
@@ -369,11 +370,10 @@
     "level": "DK Isles",
     "kong": "Lanky",
     "type": "Banana",
-    "requirement_count": 3,
+    "requirement_count": 2,
     "moves": [
       "balloon",
-      "barrels",
-      "twirl"
+      "barrels"
     ]
   },
   {
@@ -397,7 +397,7 @@
     "type": "Banana",
     "requirement_count": 2,
     "moves": [
-      "twirl",
+      "gone",
       "vines"
     ]
   },
@@ -408,11 +408,10 @@
     "level": "DK Isles",
     "kong": "Donkey",
     "type": "Blueprint",
-    "requirement_count": 3,
+    "requirement_count": 2,
     "moves": [
       "coconut",
-      "scope",
-      "twirl"
+      "scope"
     ]
   },
   {
@@ -474,7 +473,7 @@
     "type": "Kong",
     "requirement_count": 1,
     "moves": [
-      "climbing"
+      "coconut"
     ]
   },
   {
@@ -484,9 +483,8 @@
     "level": "Jungle Japes",
     "kong": "Any",
     "type": "Banana",
-    "requirement_count": 1,
+    "requirement_count": 0,
     "moves": [
-      "climbing"
     ]
   },
   {
@@ -498,7 +496,7 @@
     "type": "Banana",
     "requirement_count": 1,
     "moves": [
-      "climbing"
+      "coconut"
     ]
   },
   {
@@ -508,8 +506,8 @@
     "level": "Jungle Japes",
     "kong": "Donkey",
     "type": "Banana",
-    "requirement_count": 0,
-    "moves": []
+    "requirement_count": 2,
+    "moves": ["coconut", "slam"]
   },
   {
     "id": "JapesDonkeyBaboonBlast",
@@ -518,10 +516,9 @@
     "level": "Jungle Japes",
     "kong": "Donkey",
     "type": "Banana",
-    "requirement_count": 3,
+    "requirement_count": 2,
     "moves": [
       "blast",
-      "climbing",
       "vines"
     ]
   },
@@ -532,9 +529,10 @@
     "level": "Jungle Japes",
     "kong": "Diddy",
     "type": "Banana",
-    "requirement_count": 1,
+    "requirement_count": 2,
     "moves": [
-      "climbing"
+      "coconut",
+      "slam"
     ]
   },
   {
@@ -546,8 +544,8 @@
     "type": "Banana",
     "requirement_count": 2,
     "moves": [
-      "climbing",
-      "peanut"
+      "peanut",
+      "slam"
     ]
   },
   {
@@ -557,9 +555,10 @@
     "level": "Jungle Japes",
     "kong": "Lanky",
     "type": "Banana",
-    "requirement_count": 1,
+    "requirement_count": 2,
     "moves": [
-      "orangstand"
+      "coconut",
+      "slam"
     ]
   },
   {
@@ -569,8 +568,8 @@
     "level": "Jungle Japes",
     "kong": "Tiny",
     "type": "Banana",
-    "requirement_count": 0,
-    "moves": []
+    "requirement_count": 2,
+    "moves": ["coconut", "slam"]
   },
   {
     "id": "JapesChunkyBoulder",
@@ -591,9 +590,9 @@
     "level": "Jungle Japes",
     "kong": "Chunky",
     "type": "Banana",
-    "requirement_count": 1,
+    "requirement_count": 2,
     "moves": [
-      "climbing"
+      "coconut", "slam"
     ]
   },
   {
@@ -603,9 +602,8 @@
     "level": "Jungle Japes",
     "kong": "Any",
     "type": "Crown",
-    "requirement_count": 1,
+    "requirement_count": 0,
     "moves": [
-      "climbing"
     ]
   },
   {
@@ -615,8 +613,8 @@
     "level": "Jungle Japes",
     "kong": "Diddy",
     "type": "Banana",
-    "requirement_count": 0,
-    "moves": []
+    "requirement_count": 1,
+    "moves": ["peanut"]
   },
   {
     "id": "JapesLankyGrapeGate",
@@ -625,9 +623,9 @@
     "level": "Jungle Japes",
     "kong": "Lanky",
     "type": "Banana",
-    "requirement_count": 1,
+    "requirement_count": 2,
     "moves": [
-      "grape"
+      "grape", "peanut"
     ]
   },
   {
@@ -637,9 +635,9 @@
     "level": "Jungle Japes",
     "kong": "Tiny",
     "type": "Banana",
-    "requirement_count": 1,
+    "requirement_count": 2,
     "moves": [
-      "feather"
+      "feather", "peanut"
     ]
   },
   {
@@ -669,9 +667,9 @@
     "level": "Jungle Japes",
     "kong": "Tiny",
     "type": "Banana",
-    "requirement_count": 1,
+    "requirement_count": 2,
     "moves": [
-      "mini"
+      "mini", "feather"
     ]
   },
   {
@@ -683,8 +681,7 @@
     "type": "Banana",
     "requirement_count": 2,
     "moves": [
-      "climbing",
-      "hunky"
+      "hunky", "feather"
     ]
   },
   {
@@ -694,13 +691,12 @@
     "level": "Jungle Japes",
     "kong": "Tiny",
     "type": "Banana",
-    "requirement_count": 5,
+    "requirement_count": 4,
     "moves": [
-      "hunky",
       "mini",
-      "oranges",
       "saxophone",
-      "slam"
+      "slam",
+      "feather"
     ]
   },
   {
@@ -742,9 +738,10 @@
     "level": "Jungle Japes",
     "kong": "Any",
     "type": "Fairy",
-    "requirement_count": 1,
+    "requirement_count": 2,
     "moves": [
-      "camera"
+      "camera",
+      "coconut"
     ]
   },
   {
@@ -754,14 +751,12 @@
     "level": "Jungle Japes",
     "kong": "Lanky",
     "type": "Banana",
-    "requirement_count": 6,
+    "requirement_count": 4,
     "moves": [
-      "climbing",
-      "grape",
       "orangstand",
       "slam",
       "trombone",
-      "twirl"
+      "peanut"
     ]
   },
   {
@@ -771,15 +766,13 @@
     "level": "Jungle Japes",
     "kong": "Any",
     "type": "Fairy",
-    "requirement_count": 7,
+    "requirement_count": 5,
     "moves": [
       "camera",
-      "climbing",
-      "grape",
       "orangstand",
       "slam",
       "trombone",
-      "twirl"
+      "peanut"
     ]
   },
   {
@@ -789,10 +782,9 @@
     "level": "Jungle Japes",
     "kong": "Diddy",
     "type": "Banana",
-    "requirement_count": 4,
+    "requirement_count": 3,
     "moves": [
       "charge",
-      "climbing",
       "peanut",
       "slam"
     ]
@@ -804,12 +796,11 @@
     "level": "Jungle Japes",
     "kong": "Chunky",
     "type": "Banana",
-    "requirement_count": 5,
+    "requirement_count": 4,
     "moves": [
       "barrels",
       "pineapple",
       "slam",
-      "twirl",
       "vines"
     ]
   },
@@ -831,12 +822,12 @@
   {
     "id": "JapesKey",
     "name": "Japes Boss Defeated",
-    "hint_region": "Bosses",
+    "hint_region": "Japescbs",
     "level": "Jungle Japes",
     "kong": "Any",
     "type": "Key",
-    "requirement_count": 0,
-    "moves": []
+    "requirement_count": 1,
+    "moves": ["barrels"]
   },
   {
     "id": "AztecDonkeyMedal",
@@ -895,8 +886,8 @@
     "level": "Angry Aztec",
     "kong": "Donkey",
     "type": "Banana",
-    "requirement_count": 0,
-    "moves": []
+    "requirement_count": 1,
+    "moves": ["blast"]
   },
   {
     "id": "AztecChunkyVases",
@@ -918,9 +909,10 @@
     "level": "Angry Aztec",
     "kong": "Donkey",
     "type": "Blueprint",
-    "requirement_count": 1,
+    "requirement_count": 2,
     "moves": [
-      "strong"
+      "strong",
+      "coconut"
     ]
   },
   {
@@ -930,9 +922,8 @@
     "level": "Angry Aztec",
     "kong": "Diddy",
     "type": "Blueprint",
-    "requirement_count": 2,
+    "requirement_count": 1,
     "moves": [
-      "climbing",
       "rocketbarrel"
     ]
   },
@@ -943,14 +934,11 @@
     "level": "Angry Aztec",
     "kong": "Tiny",
     "type": "Banana",
-    "requirement_count": 6,
+    "requirement_count": 3,
     "moves": [
       "diving",
       "feather",
-      "grape",
-      "mini",
-      "peanut",
-      "pineapple"
+      "mini"
     ]
   },
   {
@@ -960,11 +948,8 @@
     "level": "Angry Aztec",
     "kong": "Chunky",
     "type": "Banana",
-    "requirement_count": 5,
+    "requirement_count": 2,
     "moves": [
-      "feather",
-      "grape",
-      "peanut",
       "pineapple",
       "triangle"
     ]
@@ -976,13 +961,11 @@
     "level": "Angry Aztec",
     "kong": "Diddy",
     "type": "Kong",
-    "requirement_count": 5,
+    "requirement_count": 3,
     "moves": [
       "diving",
-      "feather",
-      "grape",
       "peanut",
-      "pineapple"
+      "charge"
     ]
   },
   {
@@ -992,13 +975,11 @@
     "level": "Angry Aztec",
     "kong": "Any",
     "type": "Banana",
-    "requirement_count": 5,
+    "requirement_count": 3,
     "moves": [
       "diving",
-      "feather",
-      "grape",
       "peanut",
-      "pineapple"
+      "charge"
     ]
   },
   {
@@ -1008,13 +989,10 @@
     "level": "Angry Aztec",
     "kong": "Lanky",
     "type": "Banana",
-    "requirement_count": 6,
+    "requirement_count": 3,
     "moves": [
       "diving",
-      "feather",
       "grape",
-      "peanut",
-      "pineapple",
       "slam"
     ]
   },
@@ -1025,13 +1003,10 @@
     "level": "Angry Aztec",
     "kong": "Any",
     "type": "Crown",
-    "requirement_count": 6,
+    "requirement_count": 3,
     "moves": [
       "diving",
-      "feather",
       "grape",
-      "peanut",
-      "pineapple",
       "slam"
     ]
   },
@@ -1042,9 +1017,10 @@
     "level": "Angry Aztec",
     "kong": "Donkey",
     "type": "Banana",
-    "requirement_count": 1,
+    "requirement_count": 2,
     "moves": [
-      "strong"
+      "strong",
+      "slam"
     ]
   },
   {
@@ -1114,9 +1090,8 @@
     "level": "Angry Aztec",
     "kong": "Diddy",
     "type": "Banana",
-    "requirement_count": 2,
+    "requirement_count": 1,
     "moves": [
-      "charge",
       "peanut"
     ]
   },
@@ -1165,9 +1140,8 @@
     "level": "Angry Aztec",
     "kong": "Chunky",
     "type": "Banana",
-    "requirement_count": 2,
+    "requirement_count": 1,
     "moves": [
-      "hunky",
       "pineapple"
     ]
   },
@@ -1178,9 +1152,8 @@
     "level": "Angry Aztec",
     "kong": "Chunky",
     "type": "Blueprint",
-    "requirement_count": 2,
+    "requirement_count": 1,
     "moves": [
-      "hunky",
       "pineapple"
     ]
   },
@@ -1206,8 +1179,8 @@
     "level": "Angry Aztec",
     "kong": "Donkey",
     "type": "Kong",
-    "requirement_count": 0,
-    "moves": []
+    "requirement_count": 2,
+    "moves": ["bongos", "diving"]
   },
   {
     "id": "AztecDonkeyFreeLanky",
@@ -1216,8 +1189,8 @@
     "level": "Angry Aztec",
     "kong": "Any",
     "type": "Banana",
-    "requirement_count": 0,
-    "moves": []
+    "requirement_count": 2,
+    "moves": ["bongos", "diving"]
   },
   {
     "id": "AztecLankyLlamaTempleBarrel",
@@ -1285,12 +1258,12 @@
   {
     "id": "AztecKey",
     "name": "Aztec Boss Defeated",
-    "hint_region": "Bosses",
+    "hint_region": "Azteccbs",
     "level": "Angry Aztec",
     "kong": "Any",
     "type": "Key",
-    "requirement_count": 0,
-    "moves": []
+    "requirement_count": 1,
+    "moves": ["barrels"]
   },
   {
     "id": "FactoryDonkeyMedal",
@@ -1349,9 +1322,8 @@
     "level": "Frantic Factory",
     "kong": "Donkey",
     "type": "Banana",
-    "requirement_count": 2,
+    "requirement_count": 1,
     "moves": [
-      "climbing",
       "slam"
     ]
   },
@@ -1362,9 +1334,8 @@
     "level": "Frantic Factory",
     "kong": "Diddy",
     "type": "Banana",
-    "requirement_count": 2,
+    "requirement_count": 1,
     "moves": [
-      "climbing",
       "spring"
     ]
   },
@@ -1377,8 +1348,7 @@
     "type": "Banana",
     "requirement_count": 2,
     "moves": [
-      "balloon",
-      "climbing"
+      "balloon"
     ]
   },
   {
@@ -1388,9 +1358,11 @@
     "level": "Frantic Factory",
     "kong": "Tiny",
     "type": "Banana",
-    "requirement_count": 1,
+    "requirement_count": 3,
     "moves": [
-      "climbing"
+      "mini",
+      "feather",
+      "slam"
     ]
   },
   {
@@ -1400,9 +1372,8 @@
     "level": "Frantic Factory",
     "kong": "Chunky",
     "type": "Blueprint",
-    "requirement_count": 1,
+    "requirement_count": 0,
     "moves": [
-      "climbing"
     ]
   },
   {
@@ -1412,10 +1383,9 @@
     "level": "Frantic Factory",
     "kong": "Any",
     "type": "Fairy",
-    "requirement_count": 2,
+    "requirement_count": 1,
     "moves": [
-      "camera",
-      "climbing"
+      "camera"
     ]
   },
   {
@@ -1425,10 +1395,12 @@
     "level": "Frantic Factory",
     "kong": "Any",
     "type": "Fairy",
-    "requirement_count": 2,
+    "requirement_count": 4,
     "moves": [
       "camera",
-      "climbing"
+      "feather",
+      "mini",
+      "slam"
     ]
   },
   {
@@ -1438,10 +1410,9 @@
     "level": "Frantic Factory",
     "kong": "Diddy",
     "type": "Banana",
-    "requirement_count": 3,
+    "requirement_count": 2,
     "moves": [
       "charge",
-      "climbing",
       "guitar"
     ]
   },
@@ -1452,9 +1423,8 @@
     "level": "Frantic Factory",
     "kong": "Lanky",
     "type": "Banana",
-    "requirement_count": 3,
+    "requirement_count": 2,
     "moves": [
-      "climbing",
       "slam",
       "trombone"
     ]
@@ -1466,9 +1436,8 @@
     "level": "Frantic Factory",
     "kong": "Chunky",
     "type": "Banana",
-    "requirement_count": 4,
+    "requirement_count": 3,
     "moves": [
-      "climbing",
       "hunky",
       "punch",
       "triangle"
@@ -1481,9 +1450,8 @@
     "level": "Frantic Factory",
     "kong": "Lanky",
     "type": "Blueprint",
-    "requirement_count": 1,
+    "requirement_count": 0,
     "moves": [
-      "climbing"
     ]
   },
   {
@@ -1493,9 +1461,8 @@
     "level": "Frantic Factory",
     "kong": "Any",
     "type": "Crown",
-    "requirement_count": 2,
+    "requirement_count": 1,
     "moves": [
-      "climbing",
       "grab"
     ]
   },
@@ -1508,7 +1475,7 @@
     "type": "Banana",
     "requirement_count": 1,
     "moves": [
-      "climbing"
+      "mini"
     ]
   },
   {
@@ -1518,10 +1485,9 @@
     "level": "Frantic Factory",
     "kong": "Diddy",
     "type": "Banana",
-    "requirement_count": 3,
+    "requirement_count": 2,
     "moves": [
       "slam",
-      "twirl",
       "vines"
     ]
   },
@@ -1532,10 +1498,9 @@
     "level": "Frantic Factory",
     "kong": "Donkey",
     "type": "Banana",
-    "requirement_count": 2,
+    "requirement_count": 1,
     "moves": [
-      "coconut",
-      "twirl"
+      "coconut"
     ]
   },
   {
@@ -1545,8 +1510,8 @@
     "level": "Frantic Factory",
     "kong": "Lanky",
     "type": "Kong",
-    "requirement_count": 0,
-    "moves": []
+    "requirement_count": 2,
+    "moves": ["slam", "orangstand"]
   },
   {
     "id": "NintendoCoin",
@@ -1557,20 +1522,20 @@
     "type": "NintendoCoin",
     "requirement_count": 2,
     "moves": [
-      "climbing",
-      "grab"
+      "grab",
+      "blast"
     ]
   },
   {
     "id": "FactoryDonkeyDKArcade",
-    "name": "Factory Donkey DK Arcade Round 1",
+    "name": "Factory Donkey Blast Course",
     "hint_region": "Storage",
     "level": "Frantic Factory",
     "kong": "Donkey",
     "type": "Banana",
     "requirement_count": 1,
     "moves": [
-      "climbing"
+      "blast"
     ]
   },
   {
@@ -1580,8 +1545,8 @@
     "level": "Frantic Factory",
     "kong": "Any",
     "type": "Banana",
-    "requirement_count": 0,
-    "moves": []
+    "requirement_count": 2,
+    "moves": ["orangstand", "slam"]
   },
   {
     "id": "FactoryTinybyArcade",
@@ -1590,9 +1555,8 @@
     "level": "Frantic Factory",
     "kong": "Tiny",
     "type": "Banana",
-    "requirement_count": 2,
+    "requirement_count": 1,
     "moves": [
-      "climbing",
       "mini"
     ]
   },
@@ -1618,7 +1582,6 @@
     "type": "Banana",
     "requirement_count": 2,
     "moves": [
-      "climbing",
       "punch"
     ]
   },
@@ -1663,7 +1626,6 @@
     "type": "Banana",
     "requirement_count": 2,
     "moves": [
-      "climbing",
       "spring"
     ]
   },
@@ -1720,7 +1682,7 @@
   {
     "id": "FactoryKey",
     "name": "Factory Boss Defeated",
-    "hint_region": "Bosses",
+    "hint_region": "Factorycbs",
     "level": "Frantic Factory",
     "kong": "Any",
     "type": "Key",
@@ -2041,7 +2003,8 @@
     "type": "Banana",
     "requirement_count": 1,
     "moves": [
-      "diving"
+      "diving",
+      "slam"
     ]
   },
   {
@@ -2185,7 +2148,7 @@
   {
     "id": "GalleonKey",
     "name": "Galleon Boss Defeated",
-    "hint_region": "Bosses",
+    "hint_region": "Galleoncbs",
     "level": "Gloomy Galleon",
     "kong": "Any",
     "type": "Key",
@@ -2610,7 +2573,7 @@
   {
     "id": "ForestKey",
     "name": "Forest Boss Defeated",
-    "hint_region": "Bosses",
+    "hint_region": "Forestcbs",
     "level": "Fungi Forest",
     "kong": "Any",
     "type": "Key",
@@ -3032,7 +2995,7 @@
   {
     "id": "CavesKey",
     "name": "Caves Boss Defeated",
-    "hint_region": "Bosses",
+    "hint_region": "Cavescbs",
     "level": "Crystal Caves",
     "kong": "Any",
     "type": "Key",
@@ -3457,110 +3420,10 @@
   {
     "id": "CastleKey",
     "name": "Castle Boss Defeated",
-    "hint_region": "Bosses",
+    "hint_region": "Castlecbs",
     "level": "Creepy Castle",
     "kong": "Any",
     "type": "Key",
-    "requirement_count": 0,
-    "moves": []
-  },
-  {
-    "id": "HelmDonkey1",
-    "name": "Helm Donkey Barrel 1",
-    "hint_region": "Helm",
-    "level": "Hideout Helm",
-    "kong": "Donkey",
-    "type": "Constant",
-    "requirement_count": 0,
-    "moves": []
-  },
-  {
-    "id": "HelmDonkey2",
-    "name": "Helm Donkey Barrel 2",
-    "hint_region": "Helm",
-    "level": "Hideout Helm",
-    "kong": "Donkey",
-    "type": "Constant",
-    "requirement_count": 0,
-    "moves": []
-  },
-  {
-    "id": "HelmDiddy1",
-    "name": "Helm Diddy Barrel 1",
-    "hint_region": "Helm",
-    "level": "Hideout Helm",
-    "kong": "Diddy",
-    "type": "Constant",
-    "requirement_count": 0,
-    "moves": []
-  },
-  {
-    "id": "HelmDiddy2",
-    "name": "Helm Diddy Barrel 2",
-    "hint_region": "Helm",
-    "level": "Hideout Helm",
-    "kong": "Diddy",
-    "type": "Constant",
-    "requirement_count": 0,
-    "moves": []
-  },
-  {
-    "id": "HelmLanky1",
-    "name": "Helm Lanky Barrel 1",
-    "hint_region": "Helm",
-    "level": "Hideout Helm",
-    "kong": "Lanky",
-    "type": "Constant",
-    "requirement_count": 0,
-    "moves": []
-  },
-  {
-    "id": "HelmLanky2",
-    "name": "Helm Lanky Barrel 2",
-    "hint_region": "Helm",
-    "level": "Hideout Helm",
-    "kong": "Lanky",
-    "type": "Constant",
-    "requirement_count": 0,
-    "moves": []
-  },
-  {
-    "id": "HelmTiny1",
-    "name": "Helm Tiny Barrel 1",
-    "hint_region": "Helm",
-    "level": "Hideout Helm",
-    "kong": "Tiny",
-    "type": "Constant",
-    "requirement_count": 0,
-    "moves": []
-  },
-  {
-    "id": "HelmTiny2",
-    "name": "Helm Tiny Barrel 2",
-    "hint_region": "Helm",
-    "level": "Hideout Helm",
-    "kong": "Tiny",
-    "type": "Constant",
-    "requirement_count": 0,
-    "moves": []
-  },
-  {
-    "id": "HelmChunky1",
-    "name": "Helm Chunky Barrel 1",
-    "hint_region": "Helm",
-    "level": "Hideout Helm",
-    "kong": "Chunky",
-    "type": "Constant",
-    "requirement_count": 0,
-    "moves": []
-  },
-  {
-    "id": "HelmChunky2",
-    "name": "Helm Chunky Barrel 2",
-    "hint_region": "Helm",
-    "level": "Hideout Helm",
-    "kong": "Chunky",
-    "type": "Constant",
     "requirement_count": 0,
     "moves": []
   },
@@ -3690,9 +3553,8 @@
     "type": "RainbowCoin",
     "requirement_count": 3,
     "moves": [
-      "climbing",
-      "orangstand",
-      "twirl"
+      "shockwave",
+      "orangstand"
     ]
   },
   {
@@ -3704,7 +3566,7 @@
     "type": "RainbowCoin",
     "requirement_count": 2,
     "moves": [
-      "hunky",
+      "shockwave",
       "pineapple"
     ]
   },
@@ -3717,7 +3579,8 @@
     "type": "RainbowCoin",
     "requirement_count": 1,
     "moves": [
-      "punch"
+      "punch",
+      "shockwave"
     ]
   },
   {
@@ -3728,7 +3591,7 @@
     "kong": "Any",
     "type": "RainbowCoin",
     "requirement_count": 0,
-    "moves": []
+    "moves": ["shockwave"]
   },
   {
     "id": "RainbowCoin_Location04",
@@ -3739,7 +3602,7 @@
     "type": "RainbowCoin",
     "requirement_count": 1,
     "moves": [
-      "climbing"
+      "shockwave"
     ]
   },
   {
@@ -3751,8 +3614,7 @@
     "type": "RainbowCoin",
     "requirement_count": 2,
     "moves": [
-      "climbing",
-      "vines"
+      "shockwave", "barrels", "rocketbarrel", "trombone"
     ]
   },
   {
@@ -3763,7 +3625,7 @@
     "kong": "Any",
     "type": "RainbowCoin",
     "requirement_count": 0,
-    "moves": []
+    "moves": ["shockwave"]
   },
   {
     "id": "RainbowCoin_Location07",
@@ -3773,7 +3635,7 @@
     "kong": "Any",
     "type": "RainbowCoin",
     "requirement_count": 0,
-    "moves": []
+    "moves": ["shockwave"]
   },
   {
     "id": "RainbowCoin_Location08",
@@ -3783,7 +3645,7 @@
     "kong": "Any",
     "type": "RainbowCoin",
     "requirement_count": 0,
-    "moves": []
+    "moves": ["shockwave"]
   },
   {
     "id": "RainbowCoin_Location09",
@@ -3794,7 +3656,7 @@
     "type": "RainbowCoin",
     "requirement_count": 2,
     "moves": [
-      "climbing",
+      "shockwave",
       "slam"
     ]
   },
@@ -3807,7 +3669,10 @@
     "type": "RainbowCoin",
     "requirement_count": 1,
     "moves": [
-      "monkeyport"
+      "monkeyport",
+      "barrels",
+      "hunky",
+      "shockwave"
     ]
   },
   {
@@ -3818,7 +3683,7 @@
     "kong": "Any",
     "type": "RainbowCoin",
     "requirement_count": 0,
-    "moves": []
+    "moves": ["shockwave"]
   },
   {
     "id": "RainbowCoin_Location12",
@@ -3828,7 +3693,7 @@
     "kong": "Any",
     "type": "RainbowCoin",
     "requirement_count": 0,
-    "moves": []
+    "moves": ["shockwave"]
   },
   {
     "id": "RainbowCoin_Location13",
@@ -3838,7 +3703,7 @@
     "kong": "Any",
     "type": "RainbowCoin",
     "requirement_count": 0,
-    "moves": []
+    "moves": ["shockwave"]
   },
   {
     "id": "RainbowCoin_Location14",
@@ -3849,7 +3714,7 @@
     "type": "RainbowCoin",
     "requirement_count": 2,
     "moves": [
-      "climbing",
+      "shockwave",
       "vines"
     ]
   },
@@ -3864,7 +3729,7 @@
     "moves": [
       "balloon",
       "barrels",
-      "twirl"
+      "shockwave"
     ]
   },
   {
@@ -3875,9 +3740,7 @@
     "kong": "Any",
     "type": "CrateItem",
     "requirement_count": 1,
-    "moves": [
-      "climbing"
-    ]
+    "moves": []
   },
   {
     "id": "MelonCrate_Location01",
@@ -3887,7 +3750,7 @@
     "kong": "Any",
     "type": "CrateItem",
     "requirement_count": 0,
-    "moves": []
+    "moves": ["coconut"]
   },
   {
     "id": "MelonCrate_Location02",
@@ -3907,9 +3770,7 @@
     "kong": "Any",
     "type": "CrateItem",
     "requirement_count": 1,
-    "moves": [
-      "climbing"
-    ]
+    "moves": []
   },
   {
     "id": "MelonCrate_Location04",
@@ -3991,7 +3852,7 @@
     "kong": "Any",
     "type": "CrateItem",
     "requirement_count": 0,
-    "moves": []
+    "moves": ["strong", "slam"]
   },
   {
     "id": "MelonCrate_Location12",
@@ -4012,9 +3873,7 @@
     "type": "BoulderItem",
     "requirement_count": 3,
     "moves": [
-      "barrels",
-      "climbing",
-      "vines"
+      "barrels"
     ]
   },
   {
@@ -4026,9 +3885,7 @@
     "type": "BoulderItem",
     "requirement_count": 3,
     "moves": [
-      "barrels",
-      "climbing",
-      "vines"
+      "barrels"
     ]
   },
   {
@@ -4117,7 +3974,6 @@
     "requirement_count": 3,
     "moves": [
       "barrels",
-      "climbing",
       "punch"
     ]
   },
