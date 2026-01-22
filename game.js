@@ -130,26 +130,84 @@ class DonkdleGame {
             return;
         }
 
-        // Filter locations by input
-        const filtered = this.locations
-            .filter(loc => loc.name.toLowerCase().includes(value.toLowerCase()))
-            .slice(0, 10); // Limit to 10 results
+        const searchTerms = value.toLowerCase().split(' ').filter(t => t.length > 0);
+        
+        // Filter and rank locations with fuzzy matching
+        const scored = this.locations
+            .map(loc => {
+                const nameLower = loc.name.toLowerCase();
+                const nameWords = nameLower.split(' ');
+                
+                let score = 0;
+                let matchedTerms = 0;
+                
+                // Check if all search terms appear somewhere in the name
+                for (const term of searchTerms) {
+                    let termMatched = false;
+                    
+                    // Exact word match
+                    if (nameWords.includes(term)) {
+                        score += 50;
+                        termMatched = true;
+                    }
+                    // Word starts with term
+                    else if (nameWords.some(word => word.startsWith(term))) {
+                        score += 30;
+                        termMatched = true;
+                    }
+                    // Term appears anywhere in name
+                    else if (nameLower.includes(term)) {
+                        score += 10;
+                        termMatched = true;
+                    }
+                    
+                    if (termMatched) matchedTerms++;
+                }
+                
+                // Must match all search terms
+                if (matchedTerms !== searchTerms.length) return null;
+                
+                // Bonus for name starting with first search term
+                if (nameLower.startsWith(searchTerms[0])) score += 100;
+                
+                // Bonus for shorter names (more specific)
+                score += (100 - nameLower.length) / 10;
+                
+                return { location: loc, score };
+            })
+            .filter(item => item !== null)
+            .sort((a, b) => b.score - a.score)
+            .slice(0, 15);
 
-        if (filtered.length === 0) {
+        if (scored.length === 0) {
             autocompleteList.classList.remove('active');
             return;
         }
 
         // Render autocomplete list
-        autocompleteList.innerHTML = filtered
-            .map((loc, index) => `
-                <div class="autocomplete-item" data-index="${index}" data-name="${loc.name}">
-                    ${loc.name}
-                    <span style="color: #818384; font-size: 0.85em; margin-left: 10px;">
-                        (${loc.hint_region} - ${loc.kong})
-                    </span>
-                </div>
-            `)
+        autocompleteList.innerHTML = scored
+            .map(({ location: loc }, index) => {
+                const highlightedName = this.highlightMatch(loc.name, value);
+                const reqCount = (loc.moves || []).length;
+                const movesPreview = (loc.moves || []).slice(0, 5).join(', ') + 
+                    ((loc.moves || []).length > 5 ? '...' : '');
+                
+                return `
+                    <div class="autocomplete-item" data-index="${index}" data-name="${loc.name}">
+                        <div class="autocomplete-main">
+                            <span class="autocomplete-name">${highlightedName}</span>
+                        </div>
+                        <div class="autocomplete-details">
+                            <span class="autocomplete-region">${loc.hint_region}</span>
+                            <span class="autocomplete-separator">•</span>
+                            <span class="autocomplete-kong">${loc.kong}</span>
+                            <span class="autocomplete-separator">•</span>
+                            <span class="autocomplete-req">${reqCount} moves</span>
+                        </div>
+                        ${movesPreview ? `<div class="autocomplete-moves">${movesPreview}</div>` : ''}
+                    </div>
+                `;
+            })
             .join('');
 
         // Add click handlers
@@ -161,6 +219,19 @@ class DonkdleGame {
         });
 
         autocompleteList.classList.add('active');
+    }
+
+    highlightMatch(text, search) {
+        const searchTerms = search.toLowerCase().split(' ').filter(t => t.length > 0);
+        let result = text;
+        
+        // Highlight each search term
+        for (const term of searchTerms) {
+            const regex = new RegExp(`(${term})`, 'gi');
+            result = result.replace(regex, '<strong>$1</strong>');
+        }
+        
+        return result;
     }
 
     navigateAutocomplete(e) {
@@ -274,13 +345,14 @@ class DonkdleGame {
         // Requirements evaluation
         let requirementStatus = 'absent';
         let requirementArrow = '';
-        const diff = Math.abs(guessed.requirement_count - target.requirement_count);
+        const guessedReqCount = (guessed.moves || []).length;
+        const targetReqCount = (target.moves || []).length;
         
-        if (guessed.requirement_count === target.requirement_count) {
+        if (guessedReqCount === targetReqCount) {
             requirementStatus = 'correct';
-        } else if (diff <= 2) {
-            requirementStatus = 'present';
-            requirementArrow = guessed.requirement_count < target.requirement_count ? '↑' : '↓';
+        } else {
+            requirementStatus = 'absent';
+            requirementArrow = guessedReqCount < targetReqCount ? '↑' : '↓';
         }
 
         // Moves evaluation - must match exactly for green, any overlap for yellow
@@ -316,7 +388,7 @@ class DonkdleGame {
             kong: { status: kongStatus, value: guessed.kong },
             requirement: { 
                 status: requirementStatus, 
-                value: guessed.requirement_count,
+                value: guessedReqCount,
                 arrow: requirementArrow
             },
             moves: { status: movesStatus, feedback: moveFeedback }
@@ -513,7 +585,7 @@ class DonkdleGame {
             <p><span class="answer-label">Region:</span> ${this.targetLocation.hint_region}</p>
             <p><span class="answer-label">Level:</span> ${this.targetLocation.level}</p>
             <p><span class="answer-label">Kong:</span> ${this.targetLocation.kong}</p>
-            <p><span class="answer-label">Move Count:</span> ${this.targetLocation.requirement_count}</p>
+            <p><span class="answer-label">Move Count:</span> ${(this.targetLocation.moves || []).length}</p>
             <p><span class="answer-label">Moves:</span> ${movesText}</p>
             ${playAgainButton}
         `;
