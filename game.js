@@ -29,6 +29,67 @@ class DonkdleGame {
         return params.get('mode') || 'daily';
     }
 
+    formatRegionName(regionName) {
+        // Format region names to be more readable
+        const regionMap = {
+            // Isles
+            'Mainisles': 'Main Isles',
+            'Outerisles': 'Outer Isles',
+            'Kremisles': 'Krem Isles',
+            'Earlylobbies': 'Early Lobbies',
+            'Latelobbies': 'Late Lobbies',
+            // Japes
+            'Japescbs': 'Japes CBs',
+            'Hillside': 'Hillside',
+            'Lowlands': 'Lowlands',
+            'Hivetunnel': 'Hive Tunnel',
+            'Stormytunnel': 'Stormy Tunnel',
+            'Cavesandmines': 'Caves and Mines',
+            // Aztec
+            'Azteccbs': 'Aztec CBs',
+            'Aztectunnels': 'Aztec Tunnels',
+            'Oasisandtotem': 'Oasis and Totem',
+            'Tinytemple': 'Tiny Temple',
+            'Fivedoortemple': 'Five Door Temple',
+            'Fivedoorship': 'Five Door Ship',
+            'Llamatemple': 'Llama Temple',
+            // Factory
+            'Factorycbs': 'Factory CBs',
+            'Storage': 'Storage',
+            'Testing': 'Testing',
+            'Productionroom': 'Production Room',
+            'Researchanddevelopment': 'R&D',
+            // Galleon
+            'Galleoncbs': 'Galleon CBs',
+            'Galleoncaverns': 'Galleon Caverns',
+            'Lighthouse': 'Lighthouse',
+            'Shipyardoutskirts': 'Shipyard Outskirts',
+            'Treasureroom': 'Treasure Room',
+            // Forest
+            'Forestcbs': 'Forest CBs',
+            'Forestcenterandbeanstalk': 'Center & Beanstalk',
+            'Mushroomexterior': 'Mushroom Exterior',
+            'Mushroominterior': 'Mushroom Interior',
+            'Mills': 'Mills',
+            'Owltree': 'Owl Tree',
+            // Caves
+            'Cavescbs': 'Caves CBs',
+            'Maincaves': 'Main Caves',
+            'Igloo': 'Igloo',
+            'Cabins': 'Cabins',
+            // Castle
+            'Castlecbs': 'Castle CBs',
+            'Castlerooms': 'Castle Rooms',
+            'Castlesurroundings': 'Castle Surroundings',
+            'Castleunderground': 'Castle Underground',
+            // Helm & Jetpac
+            'Helm': 'Helm',
+            'Jetpac': 'Jetpac'
+        };
+        
+        return regionMap[regionName] || regionName;
+    }
+
     async loadLocations() {
         try {
             const response = await fetch('locations_data.json');
@@ -198,7 +259,7 @@ class DonkdleGame {
                             <span class="autocomplete-name">${highlightedName}</span>
                         </div>
                         <div class="autocomplete-details">
-                            <span class="autocomplete-region">${loc.hint_region}</span>
+                            <span class="autocomplete-region">${this.formatRegionName(loc.hint_region)}</span>
                             <span class="autocomplete-separator">•</span>
                             <span class="autocomplete-kong">${loc.kong}</span>
                             <span class="autocomplete-separator">•</span>
@@ -439,7 +500,7 @@ class DonkdleGame {
         regionCell.className = `guess-cell ${animate ? '' : guess.feedback.region.status}`;
         regionCell.innerHTML = `
             <div class="cell-label">REGION</div>
-            <div class="cell-value">${guess.feedback.region.value}</div>
+            <div class="cell-value">${this.formatRegionName(guess.feedback.region.value)}</div>
         `;
         row.appendChild(regionCell);
 
@@ -616,7 +677,7 @@ class DonkdleGame {
         answerDisplay.innerHTML = `
             <h3>${this.mode === 'random' ? 'The Location:' : "Today's Location:"}</h3>
             <p><span class="answer-label">Name:</span> ${this.targetLocation.name}</p>
-            <p><span class="answer-label">Region:</span> ${this.targetLocation.hint_region}</p>
+            <p><span class="answer-label">Region:</span> ${this.formatRegionName(this.targetLocation.hint_region)}</p>
             <p><span class="answer-label">Level:</span> ${this.targetLocation.level}</p>
             <p><span class="answer-label">Kong:</span> ${this.targetLocation.kong}</p>
             <p><span class="answer-label">Move Count:</span> ${(this.targetLocation.moves || []).length}</p>
