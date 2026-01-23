@@ -127,7 +127,6 @@ class DonkdleGame {
             // Random mode: select a random location each time
             const index = Math.floor(Math.random() * this.locations.length);
             this.targetLocation = this.locations[index];
-            console.log('Random location selected:', this.targetLocation.name);
         } else {
             // Daily mode: use today's date in CST as seed for consistent daily puzzle
             const today = this.getCSTDate();
@@ -136,8 +135,6 @@ class DonkdleGame {
             // Simple seeded random
             const index = this.seededRandom(seed) % this.locations.length;
             this.targetLocation = this.locations[index];
-            
-            console.log('Today\'s location selected (CST):', this.targetLocation.name);
         }
     }
 
