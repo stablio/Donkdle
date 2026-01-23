@@ -385,7 +385,7 @@ class DonkdleGame {
             regionStatus = 'present';
         }
 
-        // Kong evaluation - handle multiple kongs
+        // Kong evaluation - handle multiple kongs (green for exact match, gray otherwise)
         let kongStatus = 'absent';
         const guessedKongs = guessed.kong.split(',').map(k => k.trim());
         const targetKongs = target.kong.split(',').map(k => k.trim());
@@ -396,15 +396,8 @@ class DonkdleGame {
         
         if (guessedSet.size === targetSet.size && [...guessedSet].every(k => targetSet.has(k))) {
             kongStatus = 'correct';
-        } else {
-            // Check if at least one kong matches
-            const hasOverlap = [...guessedSet].some(k => targetSet.has(k));
-            const hasAny = guessedKongs.includes('Any') || targetKongs.includes('Any');
-            
-            if (hasOverlap || hasAny) {
-                kongStatus = 'present';
-            }
         }
+        // No yellow/present state - either correct or absent
 
         // Requirements evaluation
         let requirementStatus = 'absent';
