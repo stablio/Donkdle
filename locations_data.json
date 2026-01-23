@@ -1025,7 +1025,8 @@
     "requirement_count": 2,
     "moves": [
       "strong",
-      "slam"
+      "slam",
+      "blast"
     ]
   },
   {
@@ -1917,7 +1918,7 @@
   },
   {
     "id": "GalleonDonkeyFreetheSeal",
-    "name": "Galleon Donkey Free the Seal",
+    "name": "Galleon Donkey Seal Checks",
     "hint_region": "Shipyardoutskirts",
     "level": "Gloomy Galleon",
     "kong": "Donkey",
@@ -1934,16 +1935,6 @@
     "type": "Blueprint",
     "requirement_count": 0,
     "moves": []
-  },
-  {
-    "id": "GalleonDonkeySealRace",
-    "name": "Galleon Donkey Seal Race",
-    "hint_region": "Shipyardoutskirts",
-    "level": "Gloomy Galleon",
-    "kong": "Donkey",
-    "type": "Banana",
-    "requirement_count": 0,
-    "moves": ["blast", "coconut"]
   },
   {
     "id": "GalleonDiddyGoldTower",
