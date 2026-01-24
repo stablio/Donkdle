@@ -4,10 +4,11 @@ class DonkdleGame {
         this.locations = [];
         this.targetLocation = null;
         this.guesses = [];
-        this.maxGuesses = Infinity;
         this.gameOver = false;
         this.gameWon = false;
         this.mode = this.getGameMode();
+        this.hardMode = this.getHardMode();
+        this.maxGuesses = this.hardMode ? 6 : Infinity;
         
         this.init();
     }
@@ -22,11 +23,25 @@ class DonkdleGame {
         if (this.gameOver) {
             this.showGameOver();
         }
+        
+        // Set hard mode checkbox state
+        document.getElementById('hardModeToggle').checked = this.hardMode;
     }
 
     getGameMode() {
         const params = new URLSearchParams(window.location.search);
         return params.get('mode') || 'daily';
+    }
+
+    getHardMode() {
+        const saved = localStorage.getItem('donkdle_hardMode');
+        return saved === 'true';
+    }
+
+    setHardMode(enabled) {
+        this.hardMode = enabled;
+        this.maxGuesses = enabled ? 6 : Infinity;
+        localStorage.setItem('donkdle_hardMode', enabled.toString());
     }
 
     getCSTDate() {
@@ -192,6 +207,19 @@ class DonkdleGame {
             this.showStatsModal();
         });
 
+        // Hard mode toggle
+        const hardModeToggle = document.getElementById('hardModeToggle');
+        hardModeToggle.addEventListener('change', (e) => {
+            if (this.guesses.length > 0) {
+                // Don't allow changing mid-game
+                e.target.checked = this.hardMode;
+                this.showMessage('Cannot change difficulty mid-game!', 'error');
+                return;
+            }
+            this.setHardMode(e.target.checked);
+            this.showMessage(`Hard mode ${e.target.checked ? 'enabled' : 'disabled'}!`, 'info');
+        });
+
         // Close modals on outside click
         window.addEventListener('click', (e) => {
             if (e.target.classList.contains('modal')) {
@@ -269,22 +297,55 @@ class DonkdleGame {
             .map(({ location: loc }, index) => {
                 const highlightedName = this.highlightMatch(loc.name, value);
                 const reqCount = (loc.moves || []).length;
-                const movesPreview = (loc.moves || []).slice(0, 5).join(', ') + 
-                    ((loc.moves || []).length > 5 ? '...' : '');
+                
+                // Check if this location has been guessed before
+                const previousGuess = this.guesses.find(g => g.location.id === loc.id);
+                let regionClass = '';
+                let kongClass = '';
+                let reqClass = '';
+                let movesHTML = '';
+                
+                if (previousGuess) {
+                    regionClass = `status-${previousGuess.feedback.region.status}`;
+                    kongClass = `status-${previousGuess.feedback.kong.status}`;
+                    reqClass = `status-${previousGuess.feedback.requirement.status}`;
+                    
+                    // Build colored moves display
+                    const locMoves = loc.moves || [];
+                    
+                    if (this.hardMode) {
+                        // Hard mode: just show the moves without highlighting
+                        movesHTML = locMoves.join(', ');
+                    } else {
+                        // Normal mode: show individual move matches
+                        const targetMoves = new Set(this.targetLocation.moves || []);
+                        
+                        if (locMoves.length > 0) {
+                            movesHTML = locMoves.map(move => {
+                                const isCorrect = targetMoves.has(move);
+                                const className = isCorrect ? 'move-match' : 'move-nomatch';
+                                return `<span class="${className}">${move}</span>`;
+                            }).join(', ');
+                        }
+                    }
+                } else {
+                    // Not guessed yet, show plain moves
+                    movesHTML = (loc.moves || []).join(', ');
+                }
                 
                 return `
-                    <div class="autocomplete-item" data-index="${index}" data-name="${loc.name}">
+                    <div class="autocomplete-item ${previousGuess ? 'already-guessed' : ''}" data-index="${index}" data-name="${loc.name}">
                         <div class="autocomplete-main">
                             <span class="autocomplete-name">${highlightedName}</span>
                         </div>
                         <div class="autocomplete-details">
-                            <span class="autocomplete-region">${this.formatRegionName(loc.hint_region)}</span>
+                            <span class="autocomplete-region ${regionClass}">${this.formatRegionName(loc.hint_region)}</span>
                             <span class="autocomplete-separator">•</span>
-                            <span class="autocomplete-kong">${loc.kong}</span>
+                            <span class="autocomplete-kong ${kongClass}">${loc.kong}</span>
                             <span class="autocomplete-separator">•</span>
-                            <span class="autocomplete-req">${reqCount} moves</span>
+                            <span class="autocomplete-req ${reqClass}">${reqCount} moves</span>
                         </div>
-                        ${movesPreview ? `<div class="autocomplete-moves">${movesPreview}</div>` : ''}
+                        ${movesHTML ? `<div class="autocomplete-moves">${movesHTML}</div>` : ''}
                     </div>
                 `;
             })
@@ -382,6 +443,11 @@ class DonkdleGame {
             this.gameOver = true;
         }
 
+        // Check if max guesses reached (for hard mode)
+        if (this.guesses.length >= this.maxGuesses && !this.gameWon) {
+            this.gameOver = true;
+        }
+
         // Save state and render with animation
         this.saveGameState();
         this.renderBoard(true); // Pass true to animate the new guess
@@ -389,7 +455,8 @@ class DonkdleGame {
         if (this.gameOver) {
             setTimeout(() => this.showGameOver(), 2500); // Increased delay for animation
         } else {
-            this.showMessage(`${this.guesses.length} ${this.guesses.length === 1 ? 'guess' : 'guesses'} made. Keep trying!`, 'info');
+            const remaining = this.maxGuesses === Infinity ? '' : ` (${this.maxGuesses - this.guesses.length} left)`;
+            this.showMessage(`${this.guesses.length} ${this.guesses.length === 1 ? 'guess' : 'guesses'} made${remaining}. Keep trying!`, 'info');
         }
     }
 
@@ -435,13 +502,15 @@ class DonkdleGame {
         const guessedMoves = new Set(guessed.moves || []);
         const targetMoves = new Set(target.moves || []);
         
-        // Calculate move matches
+        // Calculate move matches (needed for both modes)
         const commonMoves = [...guessedMoves].filter(m => targetMoves.has(m));
         const missingMoves = [...targetMoves].filter(m => !guessedMoves.has(m));
         const extraMoves = [...guessedMoves].filter(m => !targetMoves.has(m));
         
         let movesStatus = 'absent';
-        // Green only if exact match (same moves, no extras, no missing)
+        let moveFeedback = {};
+        
+        // Green only if exact match (same moves, no extras, no missing) - same logic for both modes
         if (guessedMoves.size === targetMoves.size && 
             commonMoves.length === targetMoves.size && 
             missingMoves.length === 0 && 
@@ -451,13 +520,25 @@ class DonkdleGame {
             // Yellow if at least one move matches
             movesStatus = 'present';
         }
-
-        // Prepare move feedback for display
-        const moveFeedback = {
-            common: commonMoves,
-            missing: missingMoves,
-            extra: extraMoves
-        };
+        
+        if (this.hardMode) {
+            // Hard mode: don't show individual move feedback, just the moves
+            moveFeedback = {
+                allMoves: [...guessedMoves],
+                common: [],
+                missing: [],
+                extra: [],
+                hardMode: true
+            };
+        } else {
+            // Normal mode: show detailed move feedback
+            moveFeedback = {
+                common: commonMoves,
+                missing: missingMoves,
+                extra: extraMoves,
+                hardMode: false
+            };
+        }
 
         return {
             region: { status: regionStatus, value: guessed.hint_region },
@@ -550,22 +631,36 @@ class DonkdleGame {
         let movesDisplay = '';
         const f = guess.feedback.moves.feedback;
         
-        if (f.common.length === 0 && f.extra.length === 0) {
-            movesDisplay = '<div class="moves-none">None</div>';
-        } else {
-            if (f.common.length > 0) {
-                movesDisplay += '<div class="moves-section">';
-                f.common.forEach(move => {
-                    movesDisplay += `<span class="move-chip move-correct">✓ ${move}</span>`;
+        if (f.hardMode) {
+            // Hard mode: show moves without feedback styling
+            if (f.allMoves && f.allMoves.length > 0) {
+                movesDisplay = '<div class="moves-section">';
+                f.allMoves.forEach(move => {
+                    movesDisplay += `<span class="move-chip move-neutral">${move}</span>`;
                 });
                 movesDisplay += '</div>';
+            } else {
+                movesDisplay = '<div class="moves-none">None</div>';
             }
-            if (f.extra.length > 0) {
-                movesDisplay += '<div class="moves-section">';
-                f.extra.forEach(move => {
-                    movesDisplay += `<span class="move-chip move-extra">${move}</span>`;
-                });
-                movesDisplay += '</div>';
+        } else {
+            // Normal mode: show individual move feedback
+            if (f.common.length === 0 && f.extra.length === 0) {
+                movesDisplay = '<div class="moves-none">None</div>';
+            } else {
+                if (f.common.length > 0) {
+                    movesDisplay += '<div class="moves-section">';
+                    f.common.forEach(move => {
+                        movesDisplay += `<span class="move-chip move-correct">✓ ${move}</span>`;
+                    });
+                    movesDisplay += '</div>';
+                }
+                if (f.extra.length > 0) {
+                    movesDisplay += '<div class="moves-section">';
+                    f.extra.forEach(move => {
+                        movesDisplay += `<span class="move-chip move-extra">${move}</span>`;
+                    });
+                    movesDisplay += '</div>';
+                }
             }
         }
         
@@ -715,9 +810,11 @@ class DonkdleGame {
         const cstDate = this.getCSTDate();
         const date = cstDate.toLocaleDateString('en-US', { timeZone: 'America/Chicago' });
         const emoji = this.gameWon ? '🎉' : '😢';
-        const tries = this.gameWon ? `${this.guesses.length}/∞` : 'X/∞';
+        const maxGuessDisplay = this.maxGuesses === Infinity ? '∞' : this.maxGuesses;
+        const tries = this.gameWon ? `${this.guesses.length}/${maxGuessDisplay}` : `X/${maxGuessDisplay}`;
+        const modeTag = this.hardMode ? ' (Hard Mode)' : '';
         
-        let text = `Donkdle ${date} ${emoji}\n${tries}\n\n`;
+        let text = `Donkdle ${date} ${emoji}${modeTag}\n${tries}\n\n`;
         
         this.guesses.forEach(guess => {
             const f = guess.feedback;

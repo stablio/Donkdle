@@ -16,6 +16,12 @@
                 <button id="helpBtn" class="icon-btn" title="How to Play">❓</button>
                 <button id="statsBtn" class="icon-btn" title="Statistics">📊</button>
             </div>
+            <div class="hard-mode-toggle">
+                <label for="hardModeToggle" title="6 guess limit • No individual move feedback">
+                    <input type="checkbox" id="hardModeToggle">
+                    <span>Hard Mode</span>
+                </label>
+            </div>
         </header>
 
         <main>
@@ -60,15 +66,14 @@
             <div class="help-section">
                 <h3>🐵 Kong</h3>
                 <p><span class="color-box green">Green</span> = Correct kong(s)</p>
-                <p><span class="color-box yellow">Yellow</span> = At least one kong matches</p>
                 <p><span class="color-box Gray">Gray</span> = No kong matches</p>
             </div>
 
             <div class="help-section">
                 <h3>📋 Requirements</h3>
                 <p><span class="color-box green">Green</span> = Correct number of requirements</p>
-                <p><span class="color-box red">Red ↑</span> = Actual location needs more items</p>
-                <p><span class="color-box red">Red ↓</span> = Actual location needs fewer items</p>
+                <p><span class="color-box red">Gray ↑</span> = Actual location needs more items</p>
+                <p><span class="color-box red">Gray ↓</span> = Actual location needs fewer items</p>
             </div>
 
             <div class="help-section">

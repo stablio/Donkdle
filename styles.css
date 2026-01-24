@@ -88,6 +88,34 @@ h1 {
     opacity: 0.7;
 }
 
+.hard-mode-toggle {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.hard-mode-toggle label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    padding: 8px 15px;
+    background-color: rgba(58, 58, 60, 0.5);
+    border-radius: 20px;
+    transition: background-color 0.2s;
+}
+
+.hard-mode-toggle label:hover {
+    background-color: rgba(58, 58, 60, 0.7);
+}
+
+.hard-mode-toggle input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
 /* Game Board */
 .game-board {
     display: flex;
@@ -226,6 +254,12 @@ h1 {
     color: var(--text-muted);
     margin-bottom: 5px;
     font-weight: bold;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.8), 0 0 5px rgba(0, 0, 0, 0.6);
+}
+
+.guess-cell.correct .cell-label,
+.guess-cell.present .cell-label {
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .cell-value {
@@ -294,6 +328,12 @@ h1 {
     background-color: rgba(129, 131, 132, 0.5);
     color: #ffffff;
     border: 1px solid rgba(129, 131, 132, 0.8);
+}
+
+.move-neutral {
+    background-color: rgba(58, 58, 60, 0.5);
+    color: #ffffff;
+    border: 1px solid rgba(58, 58, 60, 0.8);
 }
 
 /* Legacy items-grid styles (keeping for backwards compatibility) */
@@ -435,9 +475,56 @@ h1 {
     color: var(--text-muted);
     margin-top: 2px;
     font-style: italic;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: normal;
+    word-wrap: break-word;
+    line-height: 1.3;
+}
+
+/* Autocomplete feedback colors */
+.autocomplete-item.already-guessed {
+    opacity: 0.7;
+}
+
+.autocomplete-region.status-correct,
+.autocomplete-kong.status-correct,
+.autocomplete-req.status-correct {
+    background-color: var(--correct);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+.autocomplete-region.status-present,
+.autocomplete-kong.status-present,
+.autocomplete-req.status-present {
+    background-color: var(--present);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+.autocomplete-region.status-absent,
+.autocomplete-kong.status-absent,
+.autocomplete-req.status-absent {
+    background-color: var(--absent);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+/* Move highlighting in autocomplete */
+.autocomplete-moves .move-match {
+    color: var(--correct);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.autocomplete-moves .move-nomatch {
+    color: var(--text-muted);
+    opacity: 0.6;
 }
 
 .guess-btn {
