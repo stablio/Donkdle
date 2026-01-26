@@ -807,8 +807,17 @@ class DonkdleGame {
     }
 
     generateShareText() {
-        const cstDate = this.getCSTDate();
-        const date = cstDate.toLocaleDateString('en-US', { timeZone: 'America/Chicago' });
+        let date;
+        if (this.mode === 'daily') {
+            // Use CST time for daily mode
+            const cstDate = this.getCSTDate();
+            date = cstDate.toLocaleDateString('en-US', { timeZone: 'America/Chicago' });
+        } else {
+            // Use local time for random mode
+            const localDate = new Date();
+            date = localDate.toLocaleDateString('en-US');
+        }
+        
         const emoji = this.gameWon ? '🎉' : '😢';
         const maxGuessDisplay = this.maxGuesses === Infinity ? '∞' : this.maxGuesses;
         const tries = this.gameWon ? `${this.guesses.length}/${maxGuessDisplay}` : `X/${maxGuessDisplay}`;

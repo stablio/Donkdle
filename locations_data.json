@@ -3459,7 +3459,8 @@
     "requirement_count": 2,
     "moves": [
       "guitar",
-      "rocketbarrel"
+      "rocketbarrel",
+      "monkeyport"
     ]
   },
   {
@@ -3471,7 +3472,8 @@
     "type": "Fairy",
     "requirement_count": 1,
     "moves": [
-      "camera"
+      "camera",
+      "monkeyport"
     ]
   },
   {
@@ -3483,7 +3485,8 @@
     "type": "Fairy",
     "requirement_count": 1,
     "moves": [
-      "camera"
+      "camera",
+      "monkeyport"
     ]
   },
   {
@@ -3494,7 +3497,7 @@
     "kong": "Any",
     "type": "Key",
     "requirement_count": 0,
-    "moves": []
+    "moves": ["monkeyport"]
   },
   {
     "id": "RarewareCoin",
@@ -3832,7 +3835,7 @@
     "name": "Isles Boulder: Near Level 2",
     "hint_region": "Mainisles",
     "level": "DK Isles",
-    "kong": "Any",
+    "kong": "Chunky",
     "type": "BoulderItem",
     "requirement_count": 3,
     "moves": [
@@ -3844,7 +3847,7 @@
     "name": "Isles Boulder: Near Level 6",
     "hint_region": "Mainisles",
     "level": "DK Isles",
-    "kong": "Any",
+    "kong": "Chunky",
     "type": "BoulderItem",
     "requirement_count": 3,
     "moves": [
@@ -3856,7 +3859,7 @@
     "name": "Aztec Boulder: Tunnel",
     "hint_region": "Aztectunnels",
     "level": "Angry Aztec",
-    "kong": "Any",
+    "kong": "Chunky",
     "type": "BoulderItem",
     "requirement_count": 2,
     "moves": [
@@ -3869,7 +3872,7 @@
     "name": "Caves Boulder: Small",
     "hint_region": "Maincaves",
     "level": "Crystal Caves",
-    "kong": "Any",
+    "kong": "Chunky",
     "type": "BoulderItem",
     "requirement_count": 1,
     "moves": [
@@ -3881,7 +3884,7 @@
     "name": "Caves Boulder: Large",
     "hint_region": "Maincaves",
     "level": "Crystal Caves",
-    "kong": "Any",
+    "kong": "Chunky",
     "type": "BoulderItem",
     "requirement_count": 3,
     "moves": [
@@ -3894,7 +3897,7 @@
     "name": "Castle Boulder: Museum",
     "hint_region": "Castlerooms",
     "level": "Creepy Castle",
-    "kong": "Any",
+    "kong": "Chunky",
     "type": "BoulderItem",
     "requirement_count": 2,
     "moves": [
@@ -3908,7 +3911,7 @@
     "name": "Isles Boulder: Japes Lobby",
     "hint_region": "Earlylobbies",
     "level": "DK Isles",
-    "kong": "Any",
+    "kong": "Chunky",
     "type": "BoulderItem",
     "requirement_count": 1,
     "moves": [
@@ -3920,7 +3923,7 @@
     "name": "Isles Boulder: Castle Lobby",
     "hint_region": "Latelobbies",
     "level": "DK Isles",
-    "kong": "Any",
+    "kong": "Chunky",
     "type": "BoulderItem",
     "requirement_count": 1,
     "moves": [
@@ -3932,7 +3935,7 @@
     "name": "Isles Boulder: Caves Lobby",
     "hint_region": "Latelobbies",
     "level": "DK Isles",
-    "kong": "Any",
+    "kong": "Chunky",
     "type": "BoulderItem",
     "requirement_count": 3,
     "moves": [
@@ -3945,7 +3948,7 @@
     "name": "Forest Keg: Mill Front Near",
     "hint_region": "Mills",
     "level": "Fungi Forest",
-    "kong": "Any",
+    "kong": "Chunky",
     "type": "BoulderItem",
     "requirement_count": 1,
     "moves": [
@@ -3957,7 +3960,7 @@
     "name": "Forest Keg: Mill Front Far",
     "hint_region": "Mills",
     "level": "Fungi Forest",
-    "kong": "Any",
+    "kong": "Chunky",
     "type": "BoulderItem",
     "requirement_count": 1,
     "moves": [
@@ -3969,7 +3972,7 @@
     "name": "Forest Keg: Mill Back",
     "hint_region": "Mills",
     "level": "Fungi Forest",
-    "kong": "Any",
+    "kong": "Chunky",
     "type": "BoulderItem",
     "requirement_count": 2,
     "moves": [
@@ -3982,7 +3985,7 @@
     "name": "Aztec Vase: Circle",
     "hint_region": "Aztectunnels",
     "level": "Angry Aztec",
-    "kong": "Any",
+    "kong": "Chunky",
     "type": "BoulderItem",
     "requirement_count": 2,
     "moves": [
@@ -3995,7 +3998,7 @@
     "name": "Aztec Vase: Colon",
     "hint_region": "Aztectunnels",
     "level": "Angry Aztec",
-    "kong": "Any",
+    "kong": "Chunky",
     "type": "BoulderItem",
     "requirement_count": 2,
     "moves": [
@@ -4008,7 +4011,7 @@
     "name": "Aztec Vase: Triangle",
     "hint_region": "Aztectunnels",
     "level": "Angry Aztec",
-    "kong": "Any",
+    "kong": "Chunky",
     "type": "BoulderItem",
     "requirement_count": 2,
     "moves": [
@@ -4021,7 +4024,7 @@
     "name": "Aztec Vase: Plus",
     "hint_region": "Aztectunnels",
     "level": "Angry Aztec",
-    "kong": "Any",
+    "kong": "Chunky",
     "type": "BoulderItem",
     "requirement_count": 2,
     "moves": [
