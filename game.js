@@ -834,6 +834,8 @@ class DonkdleGame {
             text += '\n';
         });
         
+        text += '\nhttps://umedmuzl.github.io/Donkdle/';
+        
         return text;
     }
 
